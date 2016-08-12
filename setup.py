@@ -20,5 +20,9 @@ setuptools.setup(
     packages=setuptools.find_packages(),
     install_requires=[
         'eventlet',
-    ]
+        'PyYAML',
+        'Popen',
+        'amqpy'
+    ],
+    tests_require=['pytest'],
 )

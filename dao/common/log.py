@@ -34,4 +34,7 @@ def setup(app_name):
     log_level = 'DEBUG' if CONF.common.debug else 'INFO'
     defaults['log_level'] = log_level
     path = os.path.join(CONF.common.log_config)
-    logging.config.fileConfig(path, defaults=defaults)
+    if path:
+        logging.config.fileConfig(path, defaults=defaults)
+    else:
+        logging.basicConfig()
